@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body style="background-image: url(http://eskipaper.com/images/amazing-purple-backgrounds-1.jpg)">
     {{{body}}}
 
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script> 
@@ -24,12 +24,14 @@
 
     $('.delete').click(function () {
         var id = this.id;
-        console.log(id);
+        var newUrl = currentURL + '/burgers/delete/' + id;
+        console.log(newUrl);
+
         $.ajax({
-            url: currentURL + '/burgers/delete',
+            url: newUrl,
             type: 'DELETE'
         }).then(function() {
-            console.log(data);
+            location.reload();
         })
     })
 </script>

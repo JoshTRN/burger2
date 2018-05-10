@@ -24,7 +24,7 @@ app.post('/burgers/add', function(req, res) {
 app.delete('/burgers/delete/:id', function(req, res) {
     console.log(req.params.id);
     burger.delete(req.params.id, function(result) {
-        res.redirect('/');
+        res.send(true);
     });
 })
 
